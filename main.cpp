@@ -38,7 +38,20 @@ int main() {
 }
 
 void open(ofstream& ofs)
-{
+{	//todo: what type of error checking do I need?
+
+	string filename;
+	//get a file name 
+	
+	
+	cout << "Target file? ";
+	cin >> filename;
+
+
+	//what if the file already exists?
+	// //what if the open operation fails?
+	// open the file
+	ofs.open(filename.c_str());
 	cout << "Opened the file" << endl;
 
 
@@ -46,6 +59,19 @@ void open(ofstream& ofs)
 
 void copyKeyboardTo(ofstream& ofs)
 {
-	cout << "Copied to the file";
+	// get a char from the console input
+	//while the current char is not  ~ 
+	//put the char in the file
+	//get anoother char from the console
 
+	char aChar = '\0';
+	cin.get(aChar);
+
+
+	while (aChar != '~' && !cin.fail() && !ofs.fail()) {
+		ofs.put(aChar);
+		cin.get(aChar);
+	}
+
+	cout << "Copied to the file";
 }
