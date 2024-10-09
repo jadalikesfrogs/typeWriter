@@ -75,3 +75,4 @@ void copyKeyboardTo(ofstream& ofs)
 
 	cout << "Copied to the file";
 }
+// to check the file open "typeWriter"by right click then open file in file explorer
